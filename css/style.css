@@ -1,0 +1,722 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --yellow: #facb4b;
+    --orange: #ed7615;
+    --red: #ed1c24;
+    --degrade-btn: linear-gradient(#ed7615, #facb4b);
+    --color-p: #000;
+    --color-p-2: #fff;
+    --cinza: #252f32;
+    --cinza-claro: #f1f1f3;
+
+}
+
+.background-amarelo{
+    background: var(--cinza);
+}
+
+/* classes reutilizavéis */
+
+.container{
+    max-width: 1440px;
+    padding: 0 5%;
+    margin: 0 auto;
+
+}
+
+/* Padding define uma distância entre o conteúdo de um elemento */ 
+
+section, 
+footer{
+    padding: 2.7rem 0;
+
+}
+
+.btn-gradient{
+    padding: 10px 25px;
+    color: var(--color-p-2);
+    border: none;
+    cursor: pointer;
+    background: #ed1c24;
+    border-radius: 5px;
+
+}
+
+
+/* Menu do site */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 0;
+
+}
+
+.logo a{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-p-2);
+}
+
+.ul{
+    display: flex;
+    align-items: center;
+
+}
+
+.ul li{
+    margin: 0 32px;
+    font-size: 15px;
+
+}
+
+.ul li a{
+    color: var(--color-p-2);
+
+}
+
+/* main */
+
+main .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+
+}
+
+.main-text{
+    width: 50%;
+    color: var(--color-p-2);
+
+}
+
+.main-text h1{
+    font-size: 4.5rem;
+
+}
+
+.main-text h2{
+    font-size: 4.0rem;
+    
+}
+
+.main-text span{
+    color:#ed1c24;
+}
+
+.main-text div{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.main-img{
+    width: 50%;
+
+}
+
+/* menu icon */
+
+.menu-icon{
+    display: none;
+    position: relative;
+    z-index: 10;
+}
+
+/* menu responsivo do site */
+
+@media (max-width: 768px){
+    .menu-icon{
+        display: block;
+    }
+    .ul{
+        position: fixed;
+        background: #2f3130;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: 100%;
+        transition: 0.3s;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .ul li{
+        font-size: 20px;
+        margin: 15px 0;
+    }
+    .ul li a:hover{
+        color: #ed1c24;
+    }
+    .ul.ativo{
+        left: 0;
+    }
+    main .container{
+        flex-direction: column;
+    }
+
+    main .container .main-img,
+    main .container .main-text{
+        width: 100%;
+        text-align: center;
+    }
+    main .container .main-text h1{
+        font-size: 4rem;
+    }
+    main .container .main-text div{
+        justify-content: center;
+    }
+    .resultados .container{
+        flex-direction: column;
+    }
+    .resultados .resultados-text,
+    .resultados .resultados-numeros{
+        width: 100%;
+        text-align: center;
+    }
+    .resultados-numeros{
+        margin-top: 30px;
+    }
+    .diferencias .container{
+        flex-direction: column; 
+    }
+    .diferencias .titulo-card{
+       width: 50vw;
+    }
+
+    .diferencias .container{
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .bike .container{
+        flex-direction: column-reverse;
+    }
+    .bike .bike-text,
+    .bike .bike-img{
+        width: 100%;
+        text-align: center;
+    }
+    .melhores-bike .cards{
+        flex-direction: column;
+        align-items: center;
+    }
+    .melhores-bike .cards .card-item{
+        width: 100%;
+    }
+
+    .newsletter .box-newsletter h2{
+        font-size: 2rem;
+        
+    }
+    .newsletter .box-newsletter input{
+        width: 90%;
+    }
+
+    .newsletter .box-newsletter button{
+        width: 50%;
+        margin-top: 20px;
+    }
+    footer .container{
+        flex-direction: column;
+    }
+    footer .container ul{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+}
+@media (max-width:440px){
+    .resultados .resultados-numeros{
+        flex-direction: column;
+    }
+
+main .container .main-text h1{
+    font-size: 3rem;
+    }
+
+}
+/* Fim da responsividade do site */ 
+
+
+/* Divisão do site */ 
+.divisao-img-branco{
+    background-color: var(--color-p-2);
+}
+
+.divisao-img-branco h3{
+    font-size: 2.2rem;
+    color: var(--color-p-2);
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+}
+
+/* resultados */
+.resultados{
+    background: var(--cinza);
+
+}
+
+.resultados .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.resultados .resultados-text{
+    color: var(--color-p-2);
+    font-size: 1.9rem;
+    font-weight: 600;
+    width: 50%;
+
+}
+
+.resultados .resultados-numeros{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-p-2);
+    margin-top: 20px;
+
+}
+
+.resultados .resultados-numeros p{
+    text-align: center;
+    margin: 0 30px;
+    font-size: 20px;
+
+}
+
+.resultados .resultados-numeros p h2{
+    font-size: 30px;
+    font-weight: 600;
+    margin: 30px auto;
+
+}
+/* section diferencias */
+
+.diferencias .card{
+    width: 30%;
+    cursor: pointer;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #f1f1f3;
+    transition: 0.3s;
+}
+
+.diferencias .card img{
+    width: 180px;
+    align-items: center;
+
+}
+
+.diferencias .card .titulo{
+    margin: 13px 0;
+    font-size: 1.9rem;
+    font-weight: 600;
+
+}
+
+.diferencias .container{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.diferencias .card p{
+    font-size: 16px;
+    text-align: left;
+
+}
+
+.diferencias .card:hover{
+    box-shadow: 0px 10px 67px 8px #252f32;
+
+}
+
+.diferencias .titulo-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.diferencias .titulo-card{
+    color: var(--color-p);
+    font-weight: 600;
+    font-weight: bold;
+
+}
+
+.resultados {
+    background-image: linear-gradient(to right, #ed1c24, #252f32, #000, #ed1c24)
+}
+
+/* Cards novas specialized */
+
+:root{
+    --background: #f1f1f3;
+    --text: #2c2c2c;
+
+}
+
+body{
+    font-size: 16px;
+    font-family: Poppins, sans-serif;
+    background: var(--background);
+
+}
+
+.palabra{
+    color: var(--red);
+}
+
+.articles{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 1200px;
+    gap: 1.5rem;
+
+}
+
+.articles article{
+    max-width: 320px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: rgba(247, 65, 3, 0.2) 0px 7px 29px 0px;
+
+}
+
+.articles .article-preview h2{
+    text-align: center;
+
+}
+
+.container-evo h2{
+    font-size: 3.0rem;
+    text-align: center;
+    font-weight: bold;
+    height: 95px;
+    text-decoration: overline #252f32;
+
+}
+
+.articles article h3{
+    margin: 0 0 0.5rem 0;
+    font-size: 1.6rem;
+    color: #ed1c24;
+    transition: color 0.3s ease-out;
+
+}
+
+.articles p{
+    text-align: left;
+    font-size: 16px;
+
+}
+
+.articles article img{
+    max-width: 100%;
+    transform-origin: center;
+    transition: transform 0.4s ease-in-out;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    object-fit: cover;
+
+}
+
+.articles article:hover img{
+    transform: scale(1.5);
+
+}
+
+.article-preview{
+    padding: 1.5rem;
+    background: var(--color-p-2);
+
+}
+
+.articles figure{
+    width: 100%;
+    height: 14rem;
+    overflow: hidden;
+
+}
+
+/* section bike avança 50 anos */
+
+.bike .container{
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(#ed1c24, #252f32, #252f32)
+
+}
+
+.bike .bike-img{
+    width: 50%;
+
+}
+
+.bike .bike-img img{
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.bike .bike-text{
+    width: 50%;
+    padding-left: 90px;
+
+}
+
+.bike .bike-text h2{
+    font-size: 2.5em;
+    color: var(--cinza-claro);
+
+}
+
+.bike .bike-text p{
+    margin: 20px 0;
+    color: var(--cinza-claro);
+
+}
+
+.bike .bike-text p b{
+    font-size: 1.8rem;
+    color: var(--color-p-2)
+
+}
+
+/* Melhores bikes do mundo */
+
+.melhores-bike .laranja{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-p);
+
+}
+
+.melhores-bike h2{
+    font-size: 2.6rem;
+    color: var(--red);
+}
+
+.melhores-bike .cards{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+}
+
+.melhores-bike .cards .card-item{
+    width: 30%;
+    text-align: center;
+    padding: 30px 0;
+    border-radius: 15px;
+    box-shadow: 0px 35px 97px -15px rgb(0, 0, 0, 0.46);
+
+}
+
+.melhores-bike .cards img{
+    width: 75%;
+
+}
+
+.melhores-bike .cards .nome-bike{
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--red);
+
+}
+
+.melhores-bike .cards .suporte{
+    margin-bottom: 20px;
+    color: var(--text);
+
+}
+
+.melhores-bike .cards button{
+    padding: 10px 30px;
+    color: #fff;
+    background-color: var(--red);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+/* section newsletter */
+.newsletter{
+    background-color: #252525;
+
+}
+
+.newsletter .box-newsletter{
+    text-align: center;
+    padding: 80px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+
+}
+
+.newsletter .box-newsletter h2{
+    font-size: 2.3rem;
+    color: var(--color-p-2);
+
+}
+
+.newsletter .box-newsletter p{
+    margin: 13px 0;
+    color: var(--color-p-2);
+}
+
+.newsletter .box-newsletter input{
+    width: 35%;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    background-color: #252f32;
+    outline: none;
+    color: var(--color-p-2);
+
+}
+
+.newsletter .box-newsletter button{
+    padding: 10px 30px;
+    color: #fff;
+    background-color: var(--red);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+
+}
+
+/* end section newsletter */
+
+/* Start footer do site */
+
+footer{
+    background-color: var(--text);
+
+}
+
+footer .container{
+    display: flex;
+    color: var(--color-p-2);
+
+}
+
+footer .container ul{
+    width: 25%;
+    
+}
+
+footer .container h3{
+    margin-bottom: 13px;
+    font-weight: 500;
+
+}
+
+footer .container .redes-socias img{
+    margin-right: 15px;
+
+}
+
+footer .container ul > p{
+    margin-bottom: 40px;
+
+}
+
+footer .container li{
+    margin: 10px 0;
+    font-size: 1.5rem;
+
+}
+
+footer .container a{
+    color: var(--color-p-2);
+    font-size: 1.5rem;
+
+}
+
+svg:hover path {
+    fill: #ed1c24;
+    cursor: pointer;
+
+}
+
+footer .redes-socias svg{
+    margin: 5px;
+
+}
+
+footer ul li a:hover{
+    color: var(--red);
+
+}
+/* Fim footer */
+
+/* Desenvolvedor do site */
+
+#topo{
+    position: fixed;
+    right: 5px;
+    bottom: 3px;
+    transform: 0.3s;
+ }
+
+ #topo img{
+    background: #ED1C24;
+    width: 45px;
+    height: 45px;
+    border-radius: 35px; 
+
+}
+
+.deve p{
+    padding: 12px 0;
+    background-color: #181818;
+    color: #fff;
+    font-size: 12px;
+    text-align: justify;
+    cursor: pointer;
+}
+
+/* Barra lateral direita do site */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ED1C24 #252525;
+
+}
